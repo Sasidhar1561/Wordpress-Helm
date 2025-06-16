@@ -1,0 +1,44 @@
+# WordPress Configuration
+wordpress:
+  replicaCount: 1
+  image:
+    repository: wordpress
+    tag: latest
+  service:
+    type: ClusterIP
+    port: 80
+  storage:
+    size: 1Gi
+  database:
+    host: mysql
+    name: wordpress
+    user: wordpress
+    password: wordpress
+
+# MySQL Configuration
+mysql:
+  replicaCount: 1
+  image:
+    repository: mysql
+    tag: 8.0
+  service:
+    port: 3306
+  storage:
+    size: 1Gi
+
+# Secret Configuration
+secrets:
+  enabled: true
+  # These values are used in the secrets.yaml template
+  mysql:
+    rootPassword: wordpresspass
+    database: wordpress
+    user: wordpress
+    password: wordpresspass
+
+# Ingress Configuration
+ingress:
+  enabled: true
+  className: nginx
+  host: wordpress1.sasidevops.site
+  sslRedirect: false

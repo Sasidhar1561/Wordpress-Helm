@@ -11,9 +11,9 @@ wordpress:
     size: 1Gi
   database:
     host: mysql
-    name: wordpress
-    user: wordpress
-    password: wordpress
+    name: 
+    user: 
+    password: 
 
 # MySQL Configuration
 mysql:
@@ -31,10 +31,10 @@ secrets:
   enabled: true
   # These values are used in the secrets.yaml template
   mysql:
-    rootPassword: wordpresspass
-    database: wordpress
-    user: wordpress
-    password: wordpresspass
+    rootPassword: 
+    database: 
+    user: 
+    password: 
 
 # Ingress Configuration
 ingress:
